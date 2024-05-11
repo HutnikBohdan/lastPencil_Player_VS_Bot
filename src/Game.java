@@ -66,8 +66,33 @@ public class Game {
         System.out.println("|".repeat(startGame));
         while (startGame > 0) {
 
-            if ("Jack's turn!".equals(namePlayer2)) {
+            if ("Jack's turn!".equals(namePlayer1)) {
 
+                System.out.println(namePlayer1);
+                startGame = bot.botMove(startGame);
+                if (startGame == 0) {
+                    player2Win = true;
+                    break;
+                } else {
+                    printGame = "|".repeat(startGame);
+                    System.out.println(printGame);
+                }
+
+                System.out.println(namePlayer2);
+                startGame = player.playerMove(startGame);
+                if (startGame == 0) {
+                    player1Win = true;
+                    break;
+                } else {
+                    printGame = "|".repeat(startGame);
+                    System.out.println(printGame);
+                }
+
+
+
+
+
+            } else if ("John's turn!".equals(namePlayer1))   {
                 System.out.println(namePlayer1);
                 startGame = player.playerMove(startGame);
                 if (startGame == 0) {
@@ -77,7 +102,6 @@ public class Game {
                     printGame = "|".repeat(startGame);
                     System.out.println(printGame);
                 }
-
 
                 System.out.println(namePlayer2);
                 startGame = bot.botMove(startGame);
@@ -90,27 +114,7 @@ public class Game {
                 }
 
 
-            } else if ("John's turn!".equals(namePlayer2))   {
-                System.out.println(namePlayer2);
-                startGame = bot.botMove(startGame);
-                if (startGame == 0) {
-                    player1Win = true;
-                    break;
-                } else {
-                    printGame = "|".repeat(startGame);
-                    System.out.println(printGame);
-                }
 
-
-                System.out.println(namePlayer1);
-                startGame = player.playerMove(startGame);
-                if (startGame == 0) {
-                    player2Win = true;
-                    break;
-                } else {
-                    printGame = "|".repeat(startGame);
-                    System.out.println(printGame);
-                }
 
 
 
